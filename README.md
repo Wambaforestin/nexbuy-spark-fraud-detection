@@ -10,13 +10,15 @@ Conduire une analyse forensique complète sur 4 970 transactions (90 jours) pour
 
 - Explorer et nettoyer le dataset (valeurs manquantes, montants aberrants)
 - Concevoir sur papier les pipelines MapReduce pour 5 pistes d'analyse
-- Implémenter en PySpark les 5 pistes :
-
+- Implémenter en PySpark les 5 pistes:
+  
+```txt
     Piste A — Profil horaire (heures anormales via z-score)
     Piste B — Burst client (> 5 transactions en 2h ou > 1500€/24h)
     Piste C — Géographie suspecte (billing ≠ delivery + carte prépayée/crypto)
     Piste D — Nouveaux comptes (< 7 jours, distribution des montants)
     Piste E — Score composite 0-100 (top 50 transactions suspectes)
+```
 
 - Optimiser avec .cache(), partitionnement, éviter les shuffles inutiles
 - Visualiser (1 graphique par piste)
